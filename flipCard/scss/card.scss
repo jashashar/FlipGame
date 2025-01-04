@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "source-serif-4-regular", sans-serif;
+  src: url("../assets/fonts/SourceSerif4-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/SourceSerif4-SemiBold.woff2") format("woff2");
+  src: url("../assets/fonts/SourceSerif4-Bold.woff2") format("woff2");
+}
+
+body {
+  background: #060822;
+  color: white;
+  font-family: "source-serif-4-regular", sans-serif;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  height: 89vh;
+
+  .win-title {
+    display: none;
+  }
+
+  .won {
+    display: block;
+    font-size: 40px;
+    animation: winning 10s ease-out infinite;
+    position: absolute;
+    z-index: 3;
+    color: aqua;
+    padding: 30px;
+    border: 1px solid;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  @keyframes winning {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    20% {
+      top: 90%;
+      left: 40%;
+    }
+    40% {
+      top: 0;
+      left: 60%;
+    }
+    60% {
+      top: 90%;
+      left: 80%;
+    }
+    70% {
+      top: 0;
+      left: 60%;
+    }
+    80% {
+      top: 90%;
+      left: 50%;
+    }
+    90% {
+      top: 0;
+      left: 30%;
+    }
+    95% {
+      top: 90%;
+      left: 10%;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .title {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+
+    .card {
+      margin: 10px 20px;
+      width: 17%;
+      border: 1px solid;
+      padding: 5px;
+      height: 140px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background-color: transparent;
+
+      .front,
+      .back {
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .front {
+        transform: rotateY(180deg);
+      }
+
+      img {
+        width: 100%;
+        height: 130px;
+        opacity: 1;
+      }
+      img.img {
+        // transform: scalex(-1);
+        transition: transform 2s;
+        opacity: 0;
+      }
+    }
+  }
+}
